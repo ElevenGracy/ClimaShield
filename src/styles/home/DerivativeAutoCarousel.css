@@ -1,0 +1,247 @@
+.carousel{
+  height: 400px;
+}
+.slick-track, .slick-list{
+  height: 330px !important;
+}
+.slick-dots{
+  display: hidden;
+}
+
+.workTitle{
+  color: white;
+  font-family: "Signika";
+  font-size: 55px;
+  position: absolute;
+}
+.workTitle:hover{
+  /* color: #79ffe7; */
+
+
+  /* text gradient start*/
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #dafaf4 0.89%,
+    #c6fcf2 17.23%,
+    #b5fcef 42.04%,
+    #63fadf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+   /* text gradient end*/
+}
+.workTitleContainer{
+  display: flex;
+  /* margin-left: 45px; */
+  margin-bottom: 120px;
+  margin-top: 80px;
+  /* align-items: center; */
+  justify-content: center;
+  
+
+}
+.workTitle::after{
+  display: block;
+  content: "";
+  position: relative;
+  width: 0;
+  height: 1px;
+  background-color: #79ffe7;
+  top: 6px;
+  transition: 0.5s;
+  margin: auto;
+}
+.workTitle:hover::after{
+  width: 480px;
+  /* display: block; */
+  
+}
+
+.slick-arrow{
+  visibility: visible;
+ 
+}
+
+
+.slick-list{
+  height: max-content;
+}
+
+.slick-slide {
+    text-align: center;
+    padding: 20px;
+    background: #182237;
+    margin: 20px;
+    width: max-content;
+    height: 290px;
+    /* height: 50vh; */
+    /* height: max-content; */
+    /* height:min-content; */
+    border-radius: 15px;
+    font-family: "Signika";
+    position: relative;
+    transition: all 0.3s ease-out;
+  overflow: hidden;
+
+  }
+
+
+
+  .slick-slide:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0) rotate(5deg) rotate(-5deg);
+      background-color: teal;
+     
+      
+  }
+
+  .slick-slide:hover .overlay {
+    transform: scale(4) translateZ(0);
+  }
+  .slick-slide:hover .number-container {
+    border-color: white;
+    background: teal;
+  }
+  .slick-slide:hover .slick-slide {
+    background-color: teal;
+  }
+  .slick-slide:hover .number{
+    background-color: white;
+    color: teal;
+  }
+  .slick-slide:active {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+      0 15px 24px  rgba(220, 233, 255, 0.48);
+  }
+  
+  
+  .slick-slide h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-size: 25px;
+  font-weight: 400;
+    color: white;
+    padding: 0 15px;
+    /* width: 250px; */
+  }
+  
+  .slick-slide p {
+    /* margin: 15px 0; */
+    color: #B7BAC1;
+    font-size: 14px;
+  font-weight: 100;
+  padding: 15px;
+  /* width: 250px; */
+  }
+
+  .slick-slide:hover .slick-slide p {
+    color: white;
+  }
+
+  .number{
+    color: #182237;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    
+    background-color: #79ffe7;
+  }
+  .number-container{
+    display: flex;
+    align-items: center; 
+     justify-content: center; 
+     border: 2px solid #79ffe7;
+    border-radius: 50%;
+    width: 59px;
+    height: 59px;
+  }
+
+  .main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+  }
+  
+
+
+  /* Custom arrow styles */
+.custom-next-arrow,
+.custom-prev-arrow {
+  position: absolute;
+  /* top: 100%; */
+  bottom: -26%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-next-arrow {
+  right: 45%;
+}
+
+.custom-prev-arrow {
+  left: 45%;
+}
+
+
+.arrow-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #79ffe7;
+  border-right: 2px solid #79ffe7;
+}
+
+.custom-next-arrow .arrow-icon {
+  transform: rotate(45deg);
+}
+
+.custom-prev-arrow .arrow-icon {
+  transform: rotate(-135deg);
+}
+
+@media only screen and (min-width:1000px) and (max-width:1300px){
+  .slick-slide h3{
+    padding: 0 8px;
+    font-size: 22px;
+  }
+
+  .slick-slide p{
+    font-size: 12px;
+  padding: 8px;
+  }
+
+  .slick-slide{
+    height: 280px;
+  }
+}
+@media only screen and (min-width:1301px) and (max-width:1525px){
+  .slick-slide h3{
+    padding: 0 10px;
+    font-size: 23px;
+  }
+
+  .slick-slide p{
+    font-size: 13px;
+  padding: 8px;
+  }
+
+  .slick-slide{
+    height: 280px;
+  }
+}

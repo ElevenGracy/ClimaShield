@@ -1,0 +1,176 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #333;
+    font-family: 'Signika';
+  }
+  
+  .buttons {
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 30px; 
+    margin-right: 85px;
+  }
+  
+  .blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    /* color: #79ffe7; */
+    color: #B7BAC1;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+  
+  .blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #79ffe7;
+    border-radius: 30px;
+  }
+  /* #0505A9 */
+  
+  .blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 4.5px;
+    top: 4.5px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+  }
+  
+  .blob-btn:hover {
+    color: #2E374A;
+    opacity: 0.9;
+    border-radius: 30px;
+  }
+  
+  .blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+  }
+  
+  .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    /* background-color:#182237; */
+    /* gradient */
+    background: linear-gradient(
+      157.81deg,
+      #2f3239 -43.27%,
+    #2d3442 -21.24%,
+    #2b3449 12.19%,
+    #29354e 29.82%,
+    #1f2a42 51.94%,
+    #182237 90.29%
+    );
+  }
+  
+  .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+  }
+  
+  .blob-btn__blob {
+    position: absolute;
+    top: 2px;
+    width: 25%;
+    height: 100%;
+    background: #79ffe7;
+
+    /* button gradient */
+    /* background: linear-gradient(
+      157.81deg,
+      rgb(129, 208, 208) -43.27%,
+      rgb(89, 195, 195) -21.24%,
+      rgb(55, 178, 178) 12.19%,
+      rgb(43, 173, 173) 29.82%,
+      rgb(23, 165, 165) 51.94%,
+      rgb(6, 141, 141) 90.29%
+    ); */
+
+
+    background: linear-gradient(
+      157.81deg,
+      #dcfaf4 -43.27%,
+      #c5f9ef -21.24%,
+      #b3fbee 12.19%,
+      #79ffe7 29.82%,
+      #5efcdf 51.94%,
+      #4cfddd 90.29%
+    );
+
+
+
+
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+  }
+  
+  @supports (filter: url('#goo')) {
+    .blob-btn__blob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+  }
+  
+  .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+  }
+  
+  .blob-btn__blob:nth-child(2) {
+    left: 25%;
+    transition-delay: 0.08s;
+  }
+  
+  .blob-btn__blob:nth-child(3) {
+    left: 50%;
+    transition-delay: 0.16s;
+  }
+  
+  .blob-btn__blob:nth-child(4) {
+    left: 75%;
+    transition-delay: 0.24s;
+  }
+  
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+  }
+  
+  @supports (filter: url('#goo')) {
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(1.4);
+    }
+  }

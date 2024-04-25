@@ -1,0 +1,72 @@
+.card-containerr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .cardd {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+    width: calc(25% - 20px); /* Adjust width based on desired layout */
+    text-align: center;
+  }
+  
+  .card.expanded {
+    /* Styles for expanded cards (optional) */
+  }
+  
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .arrow-button,
+  .collapse-button,
+  .expand-button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 0 5px;
+  }
+  
+  .arrow-button:hover,
+  .collapse-button:hover,
+  .expand-button:hover {
+    background-color: #ccc;
+  }
+  
+  .arrow-button i,
+  .collapse-button i,
+  .expand-button i {
+    font-size: 1.2rem;
+  }
+  
+  .arrow-button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
+  /* Optional hover effects for cards */
+  .card:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+  }

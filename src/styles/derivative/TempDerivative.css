@@ -1,0 +1,234 @@
+/* .main-contract-component {
+  background-color: #000;
+}
+
+.derivative-details-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.derivativeTitleBox {
+  font-size: 2rem;
+  color: #93ff00;
+  font-weight: 700;
+  background-color: black;
+  width: 70%;
+  border-radius: 2.5rem;
+  padding: 0.8rem 5rem;
+  border: 2px solid white;
+}
+
+.accordian-div {
+  background: linear-gradient(to left, #6a79ff, #4250ff);
+  color: white;
+  padding: 1.8rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+}
+
+.accordion-box-border {
+  border-radius: 2.4rem !important;
+}
+
+.accordion-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.accordion-list-item {
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.temp-derivative-main {
+  border: 2px solid white;
+  border-radius: 1.1rem;
+  text-align: left;
+  position: relative;
+  padding-bottom: 3rem;
+  color: white;
+  background-color: #424242;
+}
+
+.derivative-img-div {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  height: 150px;
+  overflow: hidden;
+}
+
+.derivative-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.derivative-details {
+  padding: 1rem;
+}
+
+.derivative-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.3rem 0rem;
+}
+
+.buy-derivative-btn {
+  
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  justify-content: center;
+  background-color: #5cd200;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 0.6rem;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.modal-form-data {
+  border: 1px solid grey;
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.3rem;
+}
+
+.icon-link {
+  color: white;
+}
+
+.icon-link:hover {
+  color: white;
+}
+
+.tooltip-inner {
+  background-color: #fff;
+  color: #000;
+}
+
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
+  border-top-color: #fff;
+}
+
+.bs-tooltip-end .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
+  border-right-color: #fff;
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
+  border-bottom-color: #fff;
+}
+
+.bs-tooltip-start .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
+  border-left-color: #fff;
+}
+
+
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 650px;
+  }
+}
+
+
+
+ */
+
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.faq-accordion {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.8s ease-in-out;
+}
+
+.faq-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.faq-card-header h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.faq-card-header .arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.faq-card-header .arrow.active {
+  transform: rotate(180deg);
+}
+
+.faq-card-content {
+  display: none;
+  width: 50%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-card.active .faq-card-content {
+  display: block;
+}
+
+.faq-scroll-down {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.faq-scroll-down:hover {
+  background-color: #3e8e41;
+}
