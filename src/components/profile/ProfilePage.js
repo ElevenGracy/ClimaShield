@@ -6,6 +6,8 @@ import { useAccount } from "wagmi";
 import { ClipLoader } from "react-spinners";
 // import temp from "../../assets/temp.jpg";
 import { DERIVATIVE_ADDRESS } from "../Contract";
+import Navbar from "../navbar/Navbar";
+
 
 function ProfilePage() {
   const [allUserContracts, setAllUserContracts] = useState([]);
@@ -121,7 +123,8 @@ function ProfilePage() {
     }
   };
 
-  return (
+  return (<>
+    <Navbar/>
     <div className="main-profile-page">
       {/* Withdraw */}
       <div className="d-flex py-4 col-11 mx-auto align-items-center">
@@ -405,6 +408,7 @@ function ProfilePage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -4,10 +4,10 @@ import { Chart } from "chart.js";
 import HomeAbout from "./HomeAbout";
 import earth from "../../assets/earthImg.svg";
 import { works } from "./data";
-
 import Button from "./button";
 // import WorkFlow from './workFlow'
-
+import Navbar from '../navbar/Navbar.js'
+import { Link } from 'react-router-dom'; 
 
 
 import DerivativeAutoCarousel from "./derivativeAutoCarousel";
@@ -16,13 +16,19 @@ function HomePage() {
   return (
     
     <>
+    <Navbar/>
       <div className="homeContainer">
         <div className="details">
           <h1 className="heading">ClimaShield</h1>
           <h5 className="subHeading">
             Weather-Proof Your Finances, <br /><span></span>Hedge with Confidence
           </h5>
+
+          <Link to="/derivatives">
+
           <Button />
+          </Link>
+
         </div>
         <div className="imgContainer">
           <img src={earth} width={480} height={480} className="imgEarth"></img>
@@ -51,6 +57,7 @@ function HomePage() {
       </div>
 
       <HomeAbout />
+      {/* <HomeAboutttt/> */}
       <DerivativeAutoCarousel/>
       {/* <WorkFlow/> */}
       </>

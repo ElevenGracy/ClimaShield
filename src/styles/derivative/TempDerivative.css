@@ -1,22 +1,53 @@
-/* .main-contract-component {
-  background-color: #000;
+.main-contract-component {
+  background-color: #151c2c;
 }
 
+
+
 .derivative-details-title {
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 600;
+  display: flex;
+  /* margin-left: 45px; */
+  margin: 0 auto;
+  margin-bottom: 120px;
+  margin-top: 120px;
+  justify-content: center;
 }
 
 .derivativeTitleBox {
-  font-size: 2rem;
-  color: #93ff00;
-  font-weight: 700;
-  background-color: black;
-  width: 70%;
-  border-radius: 2.5rem;
-  padding: 0.8rem 5rem;
-  border: 2px solid white;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #dafaf4 0.89%,
+    #c6fcf2 17.23%,
+    #b5fcef 42.04%,
+    #a1fbeb 55.12%,
+    #8afee9 71.54%,
+    #63fadf 100%
+
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  color: white;
+  font-family: "Signika";
+  font-size: 45px;
+  position: absolute;
+
+}
+
+.derivativeTitleBox::after{
+  display: block;
+  content: "";
+  position: relative;
+  width: 650px;
+  height: 1px;
+  background-color: #79ffe7;
+  top: 6px;
+  transition: 0.5s;
+  margin: auto;
+}
+.derivativeTitleBox:hover::after{
+  width: 0px;
 }
 
 .accordian-div {
@@ -35,22 +66,47 @@
   font-size: 1.2rem;
   font-weight: 600;
 }
-
+.d-details{
+  color: #B7BAC1;
+  transition: color 0.5s ease-in-out;
+  padding: 20px;
+  background-color: #2E374A;
+  border-radius: 10px;
+  margin-top: 5px;
+  transition: border 0.5s ease-in-out;
+}
+.d-details:hover{
+  border: 1px solid #79ffe7;
+  color: white;
+  padding: 19px;
+}
 .accordion-list-item {
   text-align: left;
   font-size: 1.1rem;
 }
-
+.head-info{
+  color: #79ffe7;
+}
 .temp-derivative-main {
-  border: 2px solid white;
+  border: 2px solid #79ffe7;
   border-radius: 1.1rem;
   text-align: left;
   position: relative;
   padding-bottom: 3rem;
   color: white;
-  background-color: #424242;
+  /* background-color: #424242; */
+  /* background: linear-gradient(331deg, #4d5770 -18.56%, #2a3246 57.53%, #2E374A 96.61%);*/
+  max-width: 400px; 
+
+  background-color: #182237;
 }
 
+/* .temp-derivative-main:hover .d-details{
+  color: white !important;
+} */
+
+
+/* hii */
 .derivative-img-div {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
@@ -72,6 +128,7 @@
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0.3rem 0rem;
+  color: #79ffe7;
 }
 
 .buy-derivative-btn {
@@ -80,13 +137,13 @@
   cursor: pointer;
   font-size: 1.2rem;
   justify-content: center;
-  background-color: #5cd200;
+  background-color: #79ffe7;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding: 0.6rem;
   position: absolute;
   bottom: 0;
-  color: #fff;
+  color: #182237;
   font-weight: 600;
 }
 
@@ -105,23 +162,23 @@
 }
 
 .tooltip-inner {
-  background-color: #fff;
-  color: #000;
+  background-color: #151c2c;
+  color: #B7BAC1;
 }
 
 .bs-tooltip-top .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
-  border-top-color: #fff;
+  border-top-color: #151c2c;
 }
 
 .bs-tooltip-end .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
-  border-right-color: #fff;
+  border-right-color: #151c2c;
 }
 
 .bs-tooltip-bottom .tooltip-arrow::before,
 .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
-  border-bottom-color: #fff;
+  border-bottom-color: #151c2c;
 }
 
 .bs-tooltip-start .tooltip-arrow::before,
@@ -139,96 +196,184 @@
 
 
 
- */
+ 
+/* title  */
 
- body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.faq-accordion {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
+ .e-titleCont{
   display: flex;
-  flex-direction: column;
+  /* margin-left: 45px; */
+  margin-bottom: 120px;
+  margin-top: 30px;
   justify-content: center;
-  align-items: center;
+
+ }
+ .e-title{
+   background: radial-gradient(
+     64.18% 64.18% at 71.16% 35.69%,
+     #dafaf4 0.89%,
+     #c6fcf2 17.23%,
+     #b5fcef 42.04%,
+     #a1fbeb 55.12%,
+     #8afee9 71.54%,
+     #63fadf 100%
+     
+     );
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     text-fill-color: transparent;
+     font-family: "Signika";
+     font-size: 55px;
+     position: absolute;
+    }
+
+    /* .e-title:hover {
+      -webkit-text-fill-color: white;
+      text-fill-color: white;
+    } */
+
+ .e-title::after{
+  display: block;
+  content: "";
+  position: relative;
+  width: 378px;
+  height: 1px;
+  background-color: #79ffe7;
+  top: 5px;
+  transition: 0.5s;
+  margin: auto;
+ }
+ .e-title:hover::after{
+  width: 0px;
+ }
+
+
+ /* basic information */
+.e-container{
+  height: 46vh;
+  width: 61vw;
+  background-color: #182237;
+  margin: 20px auto;
+  /* box-shadow: 0px 5px 10px 0px #79ffe7; */
+  box-shadow: 13px 13px 25px -8px #79ffe7;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 50px;
+  transition: border 0.5s ease-in-out !important;
+}
+.e-container:hover{
+  border: 2px solid #79ffe7 ;
+  
 }
 
-.faq-card {
-  position: absolute;
-  top: 0;
-  left: 0;
+.swiper {
   width: 100%;
   height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #2E374A; */
+  /* background: linear-gradient(331deg, #313a52 -15.56%, #2a3246 11.53%, #2E374A 42.61%); */
+  /* background: linear-gradient(331deg, #4d5770 1.44%, #2a3246 56.53%, #2E374A 99.61%); */
+  background: linear-gradient(331deg, #4d5770 -18.56%, #2a3246 57.53%, #2E374A 96.61%);
+  /* Center slide text vertically */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: all 0.8s ease-in-out;
+  padding: 30px;
+  text-align: left;
+  border-radius: 10px;
+  /* border: none; */
+
 }
 
-.faq-card.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.faq-card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.faq-card-header h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.faq-card-header .arrow {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #ccc;
-  transition: all 0.3s ease-in-out;
-}
-
-.faq-card-header .arrow.active {
-  transform: rotate(180deg);
-}
-
-.faq-card-content {
-  display: none;
-  width: 50%;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.faq-card.active .faq-card-content {
-  display: block;
-}
-
-.faq-scroll-down {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #4CAF50;
+.swiper-slide:hover .e-ans{
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
-.faq-scroll-down:hover {
-  background-color: #3e8e41;
+.swiper-button-prev,.swiper-button-next{
+  visibility: hidden;
 }
+
+.e-que{
+  /* color: white; */
+  font-size: 35px;
+  font-weight: 200;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #dafaf4 0.89%,
+    #c6fcf2 17.23%,
+    #b5fcef 42.04%,
+    #63fadf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.e-ans{
+  color: #B7BAC1;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 100;
+
+}
+
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  /* color: var(--swiper-theme-color); */
+  color: #79ffe7;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 2px;
+  /* stroke: var(--swiper-theme-color); */
+  stroke: #79ffe7 !important;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #79ffe7 !important;
+  width: 20px !important;
+  height: 10px !important; 
+  border-radius: 10px !important;
+}
+.swiper-pagination-bullet {
+  background-color: #79ffe7 !important;
+  width: 10px  ;
+  height: 10px ; 
+  border-radius: 50%;
+}
+
+
+

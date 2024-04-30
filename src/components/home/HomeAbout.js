@@ -27,7 +27,7 @@ const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (isPlaying && !isHovered) {
-      intervalRef.current = setInterval(goToNext, 1500); // Adjust the interval duration as needed
+      intervalRef.current = setInterval(goToNext, 2700); // Adjust the interval duration as needed
     } else {
       clearInterval(intervalRef.current);
     }

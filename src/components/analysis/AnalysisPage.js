@@ -3,6 +3,7 @@ import Chart from "chart.js/auto";
 import { Pie, Bar } from "react-chartjs-2";
 import "../../styles/analysis/Analysis.css";
 import { ClipLoader } from "react-spinners";
+import Navbar from "../navbar/Navbar";
 
 function AnalysisPage() {
   const [location, setLocation] = useState("london");
@@ -75,7 +76,10 @@ function AnalysisPage() {
     };
   };
 
-  return (
+  return (<>
+ <Navbar/>
+
+ 
     <div className="py-4">
       <div>
         <div className="py-2 analysis-title">Enter the location and date</div>
@@ -116,6 +120,7 @@ function AnalysisPage() {
         )}
       </div>
     </div>
+    </>
   );
 }
 

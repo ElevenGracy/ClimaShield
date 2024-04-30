@@ -47,20 +47,7 @@ function Navbar() {
             <img src={logo} className="img-logo" width={10} />
           </a>
 
-          {/* <button
-            type="button"
-            className="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarRightAlignExample"
-            aria-controls="navbarRightAlignExample"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="toggler-icon top-bar"></span>
-            <span className="toggler-icon middle-bar"></span>
-            <span className="toggler-icon bottom-bar"></span>
-          </button> */}
-
+         
           <div
             className="collapse navbar-collapse justify-content-end"
             id="navbarRightAlignExample"

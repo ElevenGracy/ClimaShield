@@ -189,13 +189,13 @@ function TempDerivative() {
   return (
     <div className="main-contract-component">
       <div
-        className="derivative-details-title my-auto"
-        style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }}
+        className="derivative-details-title "
+        // style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }}
       >
-        {" "}
-        <span className="derivativeTitleBox">
+      
+        <h1 className="derivativeTitleBox">
           List of Weather Derivative Contracts
-        </span>
+        </h1>
       </div>
       <div className="row col-12 py-5 px-5 justify-content-around">
         {!isWalletConnected ?  (
@@ -232,7 +232,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>{item.name}</div>
+                  <div className="d-details">{item.name}</div>
                 </div>
 
                 <div className="py-1">
@@ -248,7 +248,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>{item.description}</div>
+                  <div className="d-details">{item.description}</div>
                 </div>
                 <div className="py-1">
                   <div className="derivative-title">
@@ -263,7 +263,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>{" "}
                   </div>
-                  <div>{item.location}</div>
+                  <div className="d-details">{item.location}</div>
                 </div>
                 <div className="py-1">
                   <div className="derivative-title">
@@ -278,7 +278,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>{hexToTimestamp(item.coverageStartDate._hex)}</div>
+                  <div className="d-details">{hexToTimestamp(item.coverageStartDate._hex)}</div>
                 </div>
                 <div className="py-1">
                   <div className="derivative-title">
@@ -293,7 +293,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>{" "}
                   </div>
-                  <div>{hexToTimestamp(item.coverageEndDate._hex)}</div>
+                  <div className="d-details">{hexToTimestamp(item.coverageEndDate._hex)}</div>
                 </div>
                 <div className="py-1">
                   <div className="derivative-title">
@@ -308,7 +308,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>{parseInt(item.strikeValue._hex, 16)} HDD</div>
+                  <div className="d-details">{parseInt(item.strikeValue._hex, 16)} HDD</div>
                 </div>
                 <div className="py-1">
                   <div className="derivative-title">
@@ -323,7 +323,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>
+                  <div className="d-details">
                     {parseInt(item.premiumAmount._hex, 16) / 1000000} USDC
                   </div>
                 </div>
@@ -341,7 +341,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>
+                  <div className="d-details">
                     {parseInt(item.payoutAmount._hex, 16) / 1000000} USDC
                   </div>
                 </div>
@@ -360,7 +360,7 @@ function TempDerivative() {
                       <i className="fas fa-info-circle head-info"></i>
                     </a>
                   </div>
-                  <div>{parseInt(item.maxBuyers._hex, 16)}</div>
+                  <div className="d-details">{parseInt(item.maxBuyers._hex, 16)}</div>
                 </div>
               </div>
               <div className="">
