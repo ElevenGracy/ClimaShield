@@ -6,7 +6,7 @@ import earth from "../../assets/earthImg.svg";
 import { works } from "./data";
 import Button from "./button";
 // import WorkFlow from './workFlow'
-import Navbar from '../navbar/Navbar.js'
+// import Navbar from '../navbar/Navbar.js'
 import { Link } from 'react-router-dom'; 
 
 
@@ -16,7 +16,7 @@ function HomePage() {
   return (
     
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
       <div className="homeContainer">
         <div className="details">
           <h1 className="heading">ClimaShield</h1>

@@ -1,5 +1,6 @@
 .main-profile-page{
   background-color: #151c2c;
+  font-family: 'Signika';
 }
 
 .user-contracts-component {
@@ -32,4 +33,68 @@
   border-top-left-radius: 1.4rem;
   height: 150px;
   overflow: hidden;
+}
+.p-titleContainer{
+  display: flex;
+  margin-left: 45px;
+  margin-bottom: 120px;
+  margin-top: 30px;
+  justify-content: center;
+}
+.p-profile{
+  font-family: "Signika";
+  font-size: 55px;
+  position: absolute;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #dafaf4 0.89%,
+    #c6fcf2 17.23%,
+    #b5fcef 42.04%,
+    #a1fbeb 55.12%,
+    #8afee9 71.54%,
+    #63fadf 100%
+
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.p-profile::after{
+  display: block;
+  content: "";
+  position: relative;
+  width: 80%;
+  height: 1px;
+  background-color: #79ffe7;
+  top: 6px;
+  transition: 0.5s;
+  margin: auto;
+}
+.p-profile:hover::after{
+  width: 0;
+}
+.p-container{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+.p-withdraw{
+  background:#182237;
+  width: 85%;
+  /* margin: 10vw; */
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+}
+.p-title{
+  color: white;
+  margin-bottom: 0;
+}
+.p-button{
+  color:white
 }

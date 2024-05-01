@@ -414,7 +414,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../../styles/derivative/TempDerivative.css";
 import { AccordionData } from "./data";
-import Navbar from "../navbar/Navbar";
+// import Navbar from "../navbar/Navbar";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -431,7 +431,7 @@ export default function DerivativeDetails() {
   };
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     <div className="e-titleCont">
          <h1 className="e-title">Basic Information</h1>
        </div>

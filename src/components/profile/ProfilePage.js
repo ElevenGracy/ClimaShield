@@ -6,7 +6,7 @@ import { useAccount } from "wagmi";
 import { ClipLoader } from "react-spinners";
 // import temp from "../../assets/temp.jpg";
 import { DERIVATIVE_ADDRESS } from "../Contract";
-import Navbar from "../navbar/Navbar";
+// import Navbar from "../navbar/Navbar";
 
 
 function ProfilePage() {
@@ -124,42 +124,67 @@ function ProfilePage() {
   };
 
   return (<>
-    <Navbar/>
+    {/* <Navbar/> */}
+    <div className="p-titleContainer">
+      <h1 className="p-profile">Profile</h1>
+    </div>
     <div className="main-profile-page">
       {/* Withdraw */}
-      <div className="d-flex py-4 col-11 mx-auto align-items-center">
-        <div className="d-flex col-6 align-items-center">
+      {/* <div className="d-flex py-4 col-11 mx-auto align-items-center"> */}
+      <div className="p-container">
+        
+        
+            {/* <div className="d-flex col-6 align-items-center">
+              <div className="">
+                {" "}
+                <h2 className="text-light">Withdraw Amount:</h2>
+              </div>
+              <div className="px-3">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Withdraw Here
+                </button>
+                <span className="text-white"> (Coming Soon)</span>
+              </div>
+            </div> */}
+        <div className="p-withdraw">
           <div className="">
             {" "}
-            <h2 className="text-light">Withdraw Amount:</h2>
+            <h2 className="p-title">Withdraw Amount:</h2>
           </div>
-          <div className="px-3">
+          <div className="p-btn-container">
             <button
               type="button"
-              className="btn btn-success"
+              className="p-button"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
               Withdraw Here
             </button>
-            <span className="text-white"> (Coming Soon)</span>
           </div>
+            <span className="p-text"> (Coming Soon)</span>
         </div>
-        <div className="d-flex col-6 align-items-center">
+
+
+        <div className="p-withdraw">
           <div className="">
             {" "}
-            <h2 className="text-light">Stake Amount to Vault:</h2>
+            <h2 className="p-title">Stake Amount to Vault:</h2>
           </div>
-          <div className="px-3">
+          {/* <div className="p-btn-container"> */}
             <button
               type="button"
-              className="btn btn-success"
+              className="p-button"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
               Stake Here
             </button>
-            <span className="text-white"> (Coming Soon)</span>
+            <span className="p-white"> (Coming Soon)</span>
 
             <div
               className="modal fade"
@@ -187,19 +212,11 @@ function ProfilePage() {
                   >
                     Hang Tight! Work is in Progress.📈
                   </div>
-                  {/* <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                  </div> */}
+                  
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
         {/* <div className="d-flex col-6">
           <div className="d-flex">Total amount spent :</div>

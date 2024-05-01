@@ -10,15 +10,12 @@ import Create from "./pages/Create";
 import "./magicscroll-trial/magicscroll/magicscroll.js";
 import "./magicscroll-trial/magicscroll/magicscroll.css";
 
-
 function App() {
-
-  
-
   return (
     <div className="App">
+      {/* <Navbar/> */}
       <BrowserRouter>
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/profile" element={<Profile />}></Route>

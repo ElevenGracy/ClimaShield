@@ -208,6 +208,9 @@ function TempDerivative() {
           </div>
         ) : allDerivatives.length > 0 ? (
           allDerivatives.map((item, key) => (
+            
+
+            
             <div
               className="temp-derivative-main col-md-5 col-sm-7 col-11 mx-1 mb-5"
               index={key}
@@ -386,6 +389,7 @@ function TempDerivative() {
               </div>
               <ToastContainer />
             </div>
+            
           ))
         ) : (
          <div className="text-white">No derivative contracts available</div>
