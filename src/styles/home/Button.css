@@ -11,15 +11,18 @@
   
   .buttons {
     margin-top: 20px;
-    text-align: center;
+    /* text-align: center; */
+    text-align: left;
     border-radius: 30px; 
-    margin-right: 80px;
+    /* margin-right: 80px; */
+    transform: translateX(-78px);
   }
   
   .blob-btn {
     z-index: 1;
     position: relative;
-    padding: 20px 46px;
+    /* padding: 20px 46px; */
+    padding: 18px 30px;
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;

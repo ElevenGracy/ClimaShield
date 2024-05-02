@@ -240,7 +240,7 @@ function TempDerivative() {
 
                 <div className="py-1">
                   <div className="derivative-title">
-                    Contract description &nbsp;&nbsp;{" "}
+                    Contract Description &nbsp;&nbsp;{" "}
                     <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -352,7 +352,7 @@ function TempDerivative() {
 
                 <div className="py-1">
                   <div className="derivative-title">
-                    Maximum buyers &nbsp;&nbsp;{" "}
+                    Maximum Buyers &nbsp;&nbsp;{" "}
                     <a
                       href="#"
                       data-bs-toggle="tooltip"

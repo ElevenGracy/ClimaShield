@@ -8,6 +8,7 @@ import Splide from "@splidejs/splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 const DerivativeAutoCarousel = () => {
+  
   return (
     <>
     <div className='workTitleContainer'>
@@ -77,13 +78,15 @@ export const AutoRotatingCarousel = ({ slides }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    // slidesToScroll:1,
     pauseOnHover: true,
-    autoplay:false,
+    autoplay:true,
+    autoplaySpeed:0,
+    cssEase:'linear',
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    prevArrow:<PrevArrow />,
   };
 
   return (

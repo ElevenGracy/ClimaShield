@@ -1,8 +1,8 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import "../../styles/home/Home.css";
 import { Chart } from "chart.js";
 import HomeAbout from "./HomeAbout";
-import earth from "../../assets/earthImg.svg";
+import img from "../../assets/img2.svg";
 import { works } from "./data";
 import Button from "./button";
 // import WorkFlow from './workFlow'
@@ -13,6 +13,8 @@ import { Link } from 'react-router-dom';
 import DerivativeAutoCarousel from "./derivativeAutoCarousel";
 
 function HomePage() {
+
+  
   return (
     
     <>
@@ -20,9 +22,10 @@ function HomePage() {
       <div className="homeContainer">
         <div className="details">
           <h1 className="heading">ClimaShield</h1>
-          <h5 className="subHeading">
+          {/* <h5 className="subHeading">
             Weather-Proof Your Finances, <br /><span></span>Hedge with Confidence
-          </h5>
+          </h5> */}
+          <h5 className="subHeading">Weather-Proof Your Finances,Hedge with Confidence</h5>
 
           <Link to="/derivatives">
 
@@ -31,7 +34,7 @@ function HomePage() {
 
         </div>
         <div className="imgContainer">
-          <img src={earth} width={480} height={480} className="imgEarth"></img>
+          <img src={img} width={600} height={600} className="imgEarth"></img>
 
           {/* for gradient */}
           <div className="grad1"></div>

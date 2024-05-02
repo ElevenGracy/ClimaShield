@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { derivativeInstance } from "../Contract";
 import { useAccount } from "wagmi";
 import { ethers } from "ethers";
-import logo from '../../assets/ClimaShield_1.png'
+import logo from "../../assets/ClimaShield_1.png";
 import { AiFillHome } from "react-icons/ai";
 import { FaFileContract } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
@@ -16,7 +16,7 @@ function Navbar() {
   const [isOwner, setIsOwner] = useState(false);
   const { address } = useAccount();
   const location = useLocation();
-  const [activeLink, setActiveLink] = useState(""); 
+  const [activeLink, setActiveLink] = useState("");
 
   useEffect(() => {
     const currentPath = location.pathname;
@@ -32,7 +32,6 @@ function Navbar() {
       setActiveLink("");
     }
   }, [location.pathname]);
-
 
   const verifyAddr = async () => {
     try {
@@ -70,52 +69,98 @@ function Navbar() {
             <img src={logo} className="img-logo" width={10} />
           </a>
 
-         
           <div
             className="collapse navbar-collapse justify-content-end"
             id="navbarRightAlignExample"
           >
             <ul className="d-lg-flex navbar-nav align-items-center mb-2 mb-lg-0 navbar-container ">
-              <li className={`nav-item py-1 px-lg-1 ${activeLink==='home' ? 'active' : ''}`}>
+              <li
+                className={`nav-item py-1 px-lg-1 ${
+                  activeLink === "home" ? "active" : ""
+                }`}
+              >
                 <NavLink
                   className="nav-link px-1 p-0 d-flex align-items-center "
                   to="/"
                 >
-                  <span className={`landing-navbar ${activeLink==='home'?'activeText':''}`}>Home<AiFillHome className="nav-icon"/></span>
-
+                  <span
+                    className={`landing-navbar ${
+                      activeLink === "home" ? "activeText" : ""
+                    }`}
+                  >
+                    Home
+                    <AiFillHome className="nav-icon" />
+                  </span>
                 </NavLink>
               </li>
-              <li className={`nav-item py-1 px-lg-1 ${activeLink==='derivatives'?'active':""}`}>
+              <li
+                className={`nav-item py-1 px-lg-1 ${
+                  activeLink === "derivatives" ? "active" : ""
+                }`}
+              >
                 <NavLink
                   className="nav-link px-1 p-0 d-flex align-items-center"
                   to="/derivatives"
                 >
-                  <span className={`landing-navbar ${activeLink==='derivatives'?'activeText':''}`}>Derivatives<FaFileContract className="nav-icon"/></span>
+                  <span
+                    className={`landing-navbar ${
+                      activeLink === "derivatives" ? "activeText" : ""
+                    }`}
+                  >
+                    Derivatives
+                    <FaFileContract className="nav-icon" />
+                  </span>
                 </NavLink>
               </li>
-              <li className={`nav-item py-1 px-lg-1 ${activeLink==='analysis'?'active':""}`}>
+              <li
+                className={`nav-item py-1 px-lg-1 ${
+                  activeLink === "analysis" ? "active" : ""
+                }`}
+              >
                 <NavLink
                   className="nav-link px-1 p-0 d-flex align-items-center"
                   to="/analysis"
                 >
-                  <span className={`landing-navbar ${activeLink==='analysis'?'activeText':''}`}>Analysis<FaSearch className="nav-icon"/></span>
+                  <span
+                    className={`landing-navbar ${
+                      activeLink === "analysis" ? "activeText" : ""
+                    }`}
+                  >
+                    Analysis
+                    <FaSearch className="nav-icon" />
+                  </span>
                 </NavLink>
               </li>
-              <li className={`nav-item py-1 px-lg-1 ${activeLink==='profile'?'active':""}`}>
+              <li
+                className={`nav-item py-1 px-lg-1 ${
+                  activeLink === "profile" ? "active" : ""
+                }`}
+              >
                 <NavLink
                   className="nav-link px-1 p-0 d-flex align-items-center"
                   to="/profile"
                 >
-                  <span className={`landing-navbar ${activeLink==='profile'?'activeText':''}`}>Profile<RiShieldUserFill className="nav-icon"/></span>
+                  <span
+                    className={`landing-navbar ${
+                      activeLink === "profile" ? "activeText" : ""
+                    }`}
+                  >
+                    Profile
+                    <RiShieldUserFill className="nav-icon" />
+                  </span>
                 </NavLink>
               </li>
               <li className="nav-item py-1 px-lg-1">
                 <a
                   className="nav-link px-1 p-0 d-flex align-items-center"
                   href=""
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span className="landing-navbar">Docs<HiDocumentArrowUp className="nav-icon"/></span>
+                  <span className="landing-navbar">
+                    Docs
+                    <HiDocumentArrowUp className="nav-icon" />
+                  </span>
                 </a>
               </li>
 
@@ -133,10 +178,9 @@ function Navbar() {
               )}
 
               <li className=" py-2 px-2 eth-item">
-                <ConnectButton />
+                <ConnectButton  />
               </li>
             </ul>
-          
           </div>
         </div>
       </nav>

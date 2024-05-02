@@ -60,6 +60,9 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+.p-titleCont{
+  margin-top: 90px;
+}
 .p-profile::after{
   display: block;
   content: "";
@@ -77,24 +80,80 @@
 .p-container{
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 99vw;
+  gap: 12px;
 }
 .p-withdraw{
   background:#182237;
-  width: 85%;
-  /* margin: 10vw; */
-  margin: auto;
+  /* width: 85%; */
+  width: 45%;
+  /* margin: auto; */
+  margin: 0 8vw;
   border-radius: 10px;
+  display: grid;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  grid-template-columns: 40% 30% 30%;
+  /* grid-template-columns: 35% 30% 30%; */
+  /* padding: 20px; */
+  /* border: 0.1px solid #79ffe7; */
+  min-height: 100px;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+
+.p-t-c{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-
+  /* justify-content: center; */
 }
 .p-title{
   color: white;
   margin-bottom: 0;
+  text-align: left;
+  font-size: 25px;
+  font-weight: 400;
+
 }
 .p-button{
-  color:white
+  color:#151c2c;
+
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #dafaf4 0.89%,
+    #c6fcf2 17.23%,
+    #b5fcef 42.04%,
+    #a1fbeb 55.12%,
+    #8afee9 71.54%,
+    #63fadf 100%
+  );
+  padding: 15px 15px;
+  border-radius: 10px;
+  min-width: 160px;
+  font-weight: 600;
+  margin: auto;
+  transition: background 0.5s , border 0.5s;
+  /* transform: translateX(25px); */
 }
+.p-button:hover{
+  color: white;
+  background: transparent;
+  border: 1px solid #79ffe7;
+  /* padding: 15.5px 20px; */
+}
+.p-button:hover .p-withdraw{
+  /* padding: 20.8px; */
+}
+.p-text{
+  color:  #B7BAC1;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  /* justify-content: end; */
+  font-size: 20px;
+  margin-left: 20px;
+  /* margin-right: 40px; */
+}
+
+

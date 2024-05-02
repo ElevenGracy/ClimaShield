@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.nav-icon{
+.nav-icon {
   margin-left: 5px;
   width: 16px;
   height: 16px;
@@ -27,70 +27,19 @@
   font-size: 1.2rem;
   font-weight: 500;
   opacity: 0.8;
-  color: #fff ;
+  color: #fff;
   border-bottom: none;
   transition: border-bottom 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.landing-navbar:hover{
-  /* color: #79ffe7 !important; */
-  /* background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #dafaf4 0.89%,
-    #c6fcf2 17.23%,
-    #b5fcef 42.04%,
-    #a1fbeb 55.12%,
-    #8afee9 71.54%,
-    #63fadf 100%
 
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent; */
-}
-
-
-/* .nav-link::after {
-  display: block;
-    content: "";
-    position: relative;
-  width: 0;
-  height: 1.5px;
-  background-color: #79ffe7;
-    top: 2px;
-    transition: 0.5s;
-    margin: auto;
-} */
-/* .landing-navbar::after {
-  display: block;
-    content: "";
-    position: relative;
-  width: 0;
-  height: 1.5px;
-  background-color: #79ffe7;
-    top: 2px;
-    transition: 0.5s;
-    margin: auto;
-} */
-/* .landing-navbar:hover::after{
-  width: 100%;
-  
-} */
-
- /* .nav-link:hover::after{
-  width: 100%;
-} */
-
-.nav-item:hover::after{
-  
+.nav-item:hover::after {
   width: 70%;
-  
 }
-.nav-item::after{
-  content:"";
+.nav-item::after {
+  content: "";
   display: block;
   height: 1px;
   background-color: #79ffe7;
@@ -103,16 +52,30 @@
   transition: 0.5s;
 }
 
-.nav-item{
+.nav-item {
   transform: translateX(-12vw);
   margin-right: 10px;
   transition: background-color 0.5s ease;
-  
 }
-.eth-item{
+
+.eth-item {
   transform: translateX(0);
 }
-.nav-item:hover .landing-navbar{
+
+.ju367v9c {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,#dafaf4 0.89%,#c6fcf2 17.23%,#b5fcef 42.04%,#a1fbeb 55.12%,#8afee9 71.54%,#63fadf 99%) !important;
+  color: #151c2c !important;
+  border-radius: 5px !important;
+}
+/* .ju367v9c:hover{
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid #79ffe7 !important;
+} */
+/* .ju367v9c{
+  background: teal !important;
+} */
+.nav-item:hover .landing-navbar {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
     #dafaf4 0.89%,
@@ -121,21 +84,18 @@
     #a1fbeb 55.12%,
     #8afee9 71.54%,
     #63fadf 100%
-
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-
 }
-.nav-item:hover .nav-icon{
-  color:#79ffe7;
+.nav-item:hover .nav-icon {
+  color: #79ffe7;
 }
 
 li.active:hover .landing-navbar,
-li.active:hover .nav-icon 
-{
+li.active:hover .nav-icon {
   background: none;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
@@ -143,43 +103,19 @@ li.active:hover .nav-icon
   text-fill-color: initial;
 }
 
-li.active .nav-icon,li.active:hover .nav-icon{
-  color: #151C2C;
+li.active .nav-icon,
+li.active:hover .nav-icon {
+  color: #151c2c;
 }
 
-li.active::after{
-  content:none;
-}
-
-.active {
-  /* border-bottom: 2px solid #79ffe7; */
-
-  /* .landing-navbar {
-    
-    background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #dafaf4 0.89%,
-    #c6fcf2 17.23%,
-    #b5fcef 42.04%,
-    #a1fbeb 55.12%,
-    #8afee9 71.54%,
-    #63fadf 100%
-
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  font-weight: 800;
-  } */
-
-
+li.active::after {
+  content: none;
 }
 
 li.active {
   /* background-color: rgba(121, 255, 231, 0.2);  */
   border-radius: 5px;
-  padding: 20px 25px; 
+  padding: 20px 25px;
   /* border: 1px solid white; */
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
@@ -189,13 +125,11 @@ li.active {
     #80f7e1 55.12%,
     #65fadf 71.54%,
     #55f7d9 100%
-
   );
-  /* transition: background-color 0.8s ease; */
-  
+  transition: background 0.8s ease;
 }
-span.activeText{
-  color: #151C2C;
+span.activeText {
+  color: #151c2c;
 }
 
 .navbar-component {
@@ -426,3 +360,22 @@ span.activeText{
     font-size: 1rem !important;
   }
 }
+
+/* @keyframes background-fade {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: rgba(121, 255, 231, 0.2);
+  }
+} */
+
+/* .nav-item {
+  transition: background-color 0.5s ease;
+  animation: background-fade 0.5s ease forwards;
+}
+
+.nav-item.active {
+  background-color: rgba(121, 255, 231, 0.2);
+  animation: background-fade 0.5s ease reverse;
+} */

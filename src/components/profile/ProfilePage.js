@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useRef} from "react";
 import "../../styles/profile/Profile.css";
 import { ethers } from "ethers";
 import { derivativeInstance } from "../Contract";
@@ -123,6 +123,31 @@ function ProfilePage() {
     }
   };
 
+  const [loadingText, setLoadingText] = useState("Coming Soon");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoadingText((prevText) => {
+        switch (prevText) {
+          case "Coming Soon":
+            return "Coming Soon.";
+          case "Coming Soon.":
+            return "Coming Soon..";
+          case "Coming Soon..":
+            return "Coming Soon...";
+          case "Coming Soon...":
+            return "Coming Soon ";
+          default:
+            return "Coming Soon";
+        }
+      });
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  
+
   return (<>
     {/* <Navbar/> */}
     <div className="p-titleContainer">
@@ -151,12 +176,12 @@ function ProfilePage() {
                 <span className="text-white"> (Coming Soon)</span>
               </div>
             </div> */}
-        <div className="p-withdraw">
-          <div className="">
+        <div className="p-withdraw" >
+          <div className="p-t-c">
             {" "}
             <h2 className="p-title">Withdraw Amount:</h2>
           </div>
-          <div className="p-btn-container">
+          {/* <div className="p-btn-container"> */}
             <button
               type="button"
               className="p-button"
@@ -165,14 +190,15 @@ function ProfilePage() {
             >
               Withdraw Here
             </button>
-          </div>
-            <span className="p-text"> (Coming Soon)</span>
+          {/* </div> */}
+            <span className="p-text"> {loadingText}</span>
+            
         </div>
 
 
-        <div className="p-withdraw">
-          <div className="">
-            {" "}
+        <div className="p-withdraw p-stack" >
+          <div className="p-t-c">
+            {/* {" "} */}
             <h2 className="p-title">Stake Amount to Vault:</h2>
           </div>
           {/* <div className="p-btn-container"> */}
@@ -184,7 +210,10 @@ function ProfilePage() {
             >
               Stake Here
             </button>
-            <span className="p-white"> (Coming Soon)</span>
+            {/* </div> */}
+            <span className="p-text"> {loadingText}</span>
+            
+            
 
             <div
               className="modal fade"
@@ -228,9 +257,9 @@ function ProfilePage() {
 
       {/* Contracts bought */}
       <div>
-        <div className="d-flex col-11 mx-auto py-2">
+        <div className="p-titleContainer p-titleCont">
           {" "}
-          <h2 className="text-light">Contracts Bought:</h2>
+          <h2 className="p-profile">Contracts Bought</h2>
         </div>
 
         <div className="row col-12 px-0 user-contracts-main mt-4 py-3 px-sm-3 justify-content-around">
