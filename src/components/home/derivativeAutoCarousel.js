@@ -78,7 +78,7 @@ export const AutoRotatingCarousel = ({ slides }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
+    speed: 3000,
     slidesToShow: 5,
     // slidesToScroll:1,
     pauseOnHover: true,

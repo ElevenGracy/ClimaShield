@@ -11,6 +11,7 @@ import { FaFileContract } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { HiDocumentArrowUp } from "react-icons/hi2";
 import { RiShieldUserFill } from "react-icons/ri";
+import { IoIosAddCircle } from "react-icons/io";
 
 function Navbar() {
   const [isOwner, setIsOwner] = useState(false);
@@ -28,7 +29,10 @@ function Navbar() {
       setActiveLink("analysis");
     } else if (currentPath === "/profile") {
       setActiveLink("profile");
-    } else {
+    } else if(currentPath === "/create"){
+      setActiveLink("create");
+    }
+    else {
       setActiveLink("");
     }
   }, [location.pathname]);
@@ -164,7 +168,27 @@ function Navbar() {
                 </a>
               </li>
 
-              {isOwner ? (
+              <li
+                className={`nav-item py-1 px-lg-1 ${
+                  activeLink === "create" ? "active" : ""
+                }`}
+              >
+                <NavLink
+                  className="nav-link px-1 p-0 d-flex align-items-center"
+                  to="/create"
+                >
+                  <span
+                    className={`landing-navbar ${
+                      activeLink === "create" ? "activeText" : ""
+                    }`}
+                  >
+                    Create
+                    <IoIosAddCircle className="nav-icon" />
+                  </span>
+                </NavLink>
+              </li>
+
+              {/* {isOwner ? (
                 <li className="nav-item py-1 px-lg-1 eth-item">
                   <NavLink
                     className="nav-link px-1 p-0 d-flex align-items-center"
@@ -175,7 +199,7 @@ function Navbar() {
                 </li>
               ) : (
                 ""
-              )}
+              )} */}
 
               <li className=" py-2 px-2 eth-item">
                 <ConnectButton  />

@@ -3,3 +3,24 @@
     color: white;
     font-weight: 700;
 }
+.f-label{
+    color: white;
+}
+.f-form-container{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.f-input{
+    width: 100%;
+    /* background-color: #B7BAC1; */
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    /* border: none;
+     */
+     border:1px solid black,1px solid black,1px solid gray,1px solid gray;
+     
+    box-shadow: inset 10px 10px 10px -1px rgba(10,99,169,0.16),inset -10px -10px 10px -1px rgba(255,255,255,0.7);
+}
