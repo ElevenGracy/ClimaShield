@@ -133,7 +133,7 @@
   min-width: 160px;
   font-weight: 600;
   margin: auto;
-  transition: background 0.5s , border 0.5s;
+  transition: background 0.3s , border 0.5s;
   /* transform: translateX(25px); */
 }
 .p-button:hover{

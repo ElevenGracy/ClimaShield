@@ -83,6 +83,8 @@ export const AutoRotatingCarousel = ({ slides }) => {
     // slidesToScroll:1,
     pauseOnHover: true,
     autoplay:true,
+    // autoplay: autoPlay && !isHovered,
+    // autoplaySpeed:1000,
     autoplaySpeed:0,
     cssEase:'linear',
     nextArrow: <NextArrow />,

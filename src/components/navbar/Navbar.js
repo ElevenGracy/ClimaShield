@@ -74,7 +74,7 @@ function Navbar() {
           </a>
 
           <div
-            className="collapse navbar-collapse justify-content-end"
+            className="collapse navbar-collapse "
             id="navbarRightAlignExample"
           >
             <ul className="d-lg-flex navbar-nav align-items-center mb-2 mb-lg-0 navbar-container ">
@@ -201,11 +201,17 @@ function Navbar() {
                 ""
               )} */}
 
-              <li className=" py-2 px-2 eth-item">
+              {/* <li className=" py-2 px-2 eth-item">
                 <ConnectButton  />
-              </li>
+              </li> */}
             </ul>
           </div>
+
+
+              <div>
+              <ConnectButton  />
+              </div>
+
         </div>
       </nav>
     </div>

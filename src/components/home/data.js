@@ -10,10 +10,10 @@ import icon3 from '../../assets/cards/Free bets.svg'
 import icon4 from '../../assets/cards/Giveaways.svg'
 
 
-import about1 from '../../assets/homeAbout/contract_creation.jpg'
-import about2 from '../../assets/homeAbout/data_analytics.jpg'
-import about3 from '../../assets/homeAbout/stockChart.jpg'
-import about4 from '../../assets/homeAbout/weather_related_risk.jpg'
+import about1 from '../../assets/homeAbout/about1.webp'
+import about2 from '../../assets/homeAbout/about2.webp'
+import about3 from '../../assets/homeAbout/about3.webp'
+import about4 from '../../assets/homeAbout/about4.webp'
 
 
 export const works=[

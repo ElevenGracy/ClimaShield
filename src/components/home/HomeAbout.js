@@ -56,7 +56,7 @@ const [isHovered, setIsHovered] = useState(false);
           onMouseLeave={() => setIsHovered(false)}
         > */}
           
-            <img src={card.img} alt="Weather Platform" className="card-image" />
+            <img src={card.img} alt="Weather Platform" className="card-image" loading="lazy"/>
             <p className="card-description">{card.description}</p>
             
           </div>
