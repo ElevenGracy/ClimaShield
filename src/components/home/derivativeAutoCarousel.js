@@ -15,6 +15,7 @@ const DerivativeAutoCarousel = () => {
     <h1 className='workTitle'>How ClimaShield Work?</h1>
   </div>
     <div className="carousel">
+      <div className="c-grad"></div>
       <AutoRotatingCarousel
         slides={slides.map((slide, index) => (
           <div key={index}>
@@ -83,6 +84,8 @@ export const AutoRotatingCarousel = ({ slides }) => {
     // slidesToScroll:1,
     pauseOnHover: true,
     autoplay:true,
+    // autoplay: autoPlay && !isHovered,
+    // autoplaySpeed:1000,
     autoplaySpeed:0,
     cssEase:'linear',
     nextArrow: <NextArrow />,

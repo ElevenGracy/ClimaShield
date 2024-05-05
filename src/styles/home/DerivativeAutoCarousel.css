@@ -1,5 +1,6 @@
 .carousel{
   height: 400px;
+  position: relative;
 }
 .slick-track, .slick-list{
   height: 330px !important;
@@ -242,4 +243,16 @@
   .slick-slide{
     height: 280px;
   }
+}
+
+.c-grad{
+  position: absolute;
+    z-index: 0;
+    width: 30%;
+    height: 30%;
+    left: 0px;
+    bottom: -100px;
+    background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+    filter: blur(123px);
+    overflow: hidden;
 }

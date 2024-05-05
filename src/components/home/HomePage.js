@@ -34,12 +34,12 @@ function HomePage() {
 
         </div>
         <div className="imgContainer">
-          <img src={img} width={600} height={600} className="imgEarth"></img>
+          <img src={img} width={600} height={600} className="imgEarth" loading="lazy"></img>
 
           {/* for gradient */}
           <div className="grad1"></div>
           <div className="grad2"></div>
-          {/* <div className="grad3"></div> */}
+          <div className="grad3"></div>
         </div>
       </div>
 

@@ -53,9 +53,9 @@
 }
 
 .nav-item {
-  transform: translateX(-12vw);
+  /* transform: translateX(-12vw); */
   margin-right: 10px;
-  transition: background-color 0.5s ease;
+  transition: background 0.5s ease;
 }
 
 .eth-item {
@@ -379,3 +379,7 @@ span.activeText {
   background-color: rgba(121, 255, 231, 0.2);
   animation: background-fade 0.5s ease reverse;
 } */
+
+.collapse{
+  justify-content: center !important;
+}
