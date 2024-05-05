@@ -120,8 +120,10 @@ transform: translateX(-3px);
 .grad1{
   position: absolute;
   z-index: 0;
-  width: 20%;
-  height: 15%;
+  /* width: 20%;
+  height: 15%; */
+  width: 30%;
+  height: 25%;
   top:0;
   background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
   filter: blur(900px);
@@ -130,8 +132,10 @@ transform: translateX(-3px);
 .grad2{
   position: absolute;
   z-index: 0;
-  width: 47%;
-  height: 60%;
+  /* width: 47%;
+  height: 60%; */
+  width: 60%;
+  height: 70%;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);

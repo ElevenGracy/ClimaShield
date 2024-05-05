@@ -39,7 +39,7 @@ function HomePage() {
           {/* for gradient */}
           <div className="grad1"></div>
           <div className="grad2"></div>
-          {/* <div className="grad3"></div> */}
+          <div className="grad3"></div>
         </div>
       </div>
 

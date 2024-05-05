@@ -10,6 +10,42 @@ import { FaImage } from "react-icons/fa6";
 
 
 function CreateContract() {
+  const [isFormValid, setIsFormValid] = useState(true);
+  const [showSyncLoader, setShowSyncLoader] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // let isFormValid = true;
+    setIsFormValid(true);
+    setShowSyncLoader(false);
+    setShowErrorMessage(false);
+
+    // Reset error messages
+    for (const field of event.target.elements) {
+      field.setCustomValidity('');
+    }
+
+    // Validate fields
+    for (const field of event.target.elements) {
+      if (field.required && field.value.trim() === '') {
+        field.setCustomValidity('This field is required');
+        // isFormValid = false;
+        setIsFormValid(false);
+        setShowSyncLoader(false); 
+        setShowErrorMessage(true);
+      }
+    }
+
+    if (isFormValid) {
+      // If all fields are valid, proceed with form submission
+      setShowSyncLoader(true);
+      setShowErrorMessage(false);
+      handleCreate();
+    }
+  };
+
+
   const [formData, setFormData] = useState({
     name: "",
     image: "",
@@ -129,14 +165,15 @@ function CreateContract() {
       </div>
       <div className="f-form-main">
         <div className="f-form-container">
+          <form onSubmit={handleSubmit}>
           <div className="f-img-container f-div">
-            <label className=" f-label">Upload Image</label>
+            <label className=" f-label">Upload Image<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
             
 
             <input
               className="f-input-file f-input"
               type="file"
-              
+              required
               onChange={(e) => {
                 setFormData({
                   ...formData,
@@ -152,7 +189,7 @@ function CreateContract() {
             <div className="f-name-container f-div">
               <div className="f-label-main">
 
-              <label className=" f-label">Name</label>
+              <label className=" f-label">Name<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -168,6 +205,7 @@ function CreateContract() {
                 className="f-input-name f-input"
                 value={formData.name}
                 placeholder="Enter Your Name"
+                required
                 onChange={(e) => {
                   setFormData({
                     ...formData,
@@ -181,7 +219,7 @@ function CreateContract() {
 
               <div className="f-label-main">
 
-              <label className="f-label">Location</label>
+              <label className="f-label">Location<span style={{ color: "red"}} className="f-star">&nbsp;*</span></label>
 
               <a
                       href="#"
@@ -198,6 +236,7 @@ function CreateContract() {
                 className="f-input-location f-input"
                 placeholder="Enter Your Location"
                 value={formData.location}
+                required
                 onChange={(e) => {
                   setFormData({
                     ...formData,
@@ -211,7 +250,7 @@ function CreateContract() {
           <div className="f-div">
             <div className="f-label-main">
 
-            <label className="f-label">Description</label>
+            <label className="f-label">Description<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
             <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -227,6 +266,7 @@ function CreateContract() {
               rows="3"
               value={formData.description}
               placeholder="Add Your Description"
+              required
               onChange={(e) => {
                 setFormData({
                   ...formData,
@@ -240,7 +280,7 @@ function CreateContract() {
             <div className="f-div">
               <div className="f-label-main">
 
-              <label className="f-label">Coverage Start Date</label>
+              <label className="f-label">Coverage Start Date<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -255,6 +295,7 @@ function CreateContract() {
                 type="date"
                 className="f-input-date f-input"
                 value={formData.coverageStartDate}
+                required
                 onChange={(e) => {
                   setFormData({
                     ...formData,
@@ -267,7 +308,7 @@ function CreateContract() {
             <div className="f-div">
               <div className="f-label-main">
 
-              <label className="f-label">Coverage End Date</label>
+              <label className="f-label">Coverage End Date<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -281,6 +322,7 @@ function CreateContract() {
               <input
                 type="date"
                 className="f-input-date f-input"
+                required
                 value={formData.coverageEndDate}
                 onChange={(e) => {
                   setFormData({
@@ -296,7 +338,7 @@ function CreateContract() {
             <div className="f-div">
               <div className="f-label-main">
 
-              <label className="f-label">Strike Value</label>
+              <label className="f-label">Strike Value<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -311,6 +353,7 @@ function CreateContract() {
                 type="number"
                 className="f-number f-input"
                 min={0}
+                required
                 value={formData.strikeValue}
                 placeholder="0"
                 onChange={(e) => {
@@ -325,7 +368,7 @@ function CreateContract() {
             <div className="f-div">
               <div className="f-label-main">
 
-              <label className="f-label">Maximum Buyers</label>
+              <label className="f-label">Maximum Buyers<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -340,6 +383,7 @@ function CreateContract() {
                 type="number"
                 className="f-number f-input"
                 min={0}
+                required
                 placeholder="0"
                 value={formData.maxBuyers}
                 onChange={(e) => {
@@ -357,7 +401,7 @@ function CreateContract() {
           <div className="f-div">
                 <div className="f-label-main">
 
-              <label className="f-label">Premium Amount</label>
+              <label className="f-label">Premium Amount<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -374,6 +418,7 @@ function CreateContract() {
                 min={0}
                 placeholder="0"
                 value={formData.premiumAmount}
+                required
                 onChange={(e) => {
                   setFormData({
                     ...formData,
@@ -385,7 +430,7 @@ function CreateContract() {
             <div className="f-div">
               <div className="f-label-main">
 
-              <label className="f-label">Payout Amount</label>
+              <label className="f-label">Payout Amount<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -401,6 +446,7 @@ function CreateContract() {
                 className="f-number f-input"
                 value={formData.payoutAmount}
                 min={0}
+                required
                 placeholder="0"
                 onChange={(e) => {
                   setFormData({
@@ -423,16 +469,21 @@ function CreateContract() {
                 <>Create</>
               )}
             </button> */}
-            <button type="button" className="f-btn f-btn-white f-btn-animate" onClick={handleCreate}>
-              {btnloading ? (
-                <>
-                  <SyncLoader color="#fff" size={12} speedMultiplier={0.8} />
-                </>
+            <button type="submit" className="f-btn f-btn-white f-btn-animate" onClick={handleCreate} >
+            {showSyncLoader ? (
+                <SyncLoader color="#fff" size={12} speedMultiplier={0.8} />
               ) : (
                 <>Create</>
               )}
             </button>
 
+
+            {showErrorMessage && (
+              <div className="error-message">
+                Please fill in all required fields.
+              </div>
+            )}
+            </form>
 
           
         </div>
