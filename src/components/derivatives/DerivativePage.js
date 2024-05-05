@@ -207,14 +207,13 @@ function TempDerivative() {
             <ClipLoader color="#5cd200" />
           </div>
         ) : allDerivatives.length > 0 ? (
-          allDerivatives.map((item, key) => (
-            
-
-            
+          allDerivatives.slice(1).map((item, key) => (
+        
             <div
               className="temp-derivative-main col-md-5 col-sm-7 col-11 mx-1 mb-5"
               index={key}
             >
+             
               <div className="derivative-img-div">
                 <img
                   src={`https://ipfs.io/ipfs/${item.image}`}
@@ -388,6 +387,7 @@ function TempDerivative() {
                 </button>
               </div>
               <ToastContainer />
+
             </div>
             
           ))
