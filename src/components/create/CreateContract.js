@@ -7,14 +7,14 @@ import { Web3Storage } from "web3.storage";
 import "../../styles/create/CreateContract.css";
 import { derivativeInstance } from "../Contract";
 import { FaImage } from "react-icons/fa6";
-import lighthouse from "@lighthouse-web3/sdk";
+// import lighthouse from "@lighthouse-web3/sdk";
 
 
 function CreateContract() {
   const [isFormValid, setIsFormValid] = useState(true);
   const [showSyncLoader, setShowSyncLoader] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
-  const [file, setFile] = useState('');
+  // const [file, setFile] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -68,42 +68,42 @@ function CreateContract() {
     token: process.env.REACT_APP_STORAGE_TOKEN,
   });
 
-  // const uploadImage = async () => {
-  //   try {
-  //     const fileInput = document.querySelector('input[type="file"]');
-  //     console.log("ipfs client: ", client);
-
-  //     const rootCid = await client.put(fileInput.files, {
-  //       name: formData.image.name,
-  //       maxRetries: 3,
-  //     });
-
-  //     console.log(formData);
-  //     return rootCid + "/" + fileInput.files[0].name;
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
-
-  const progressCallback = (progressData) => {
-    let percentageDone =
-      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
-  };
-
   const uploadImage = async () => {
     try {
-        const output = await lighthouse.upload(
-        file,
-        process.env.REACT_APP_LIGHTHOUSE_API_KEY,
-        false,
-        progressCallback
-      );
-      console.log(output.data.Hash);
-      return output.data.Hash;
+      const fileInput = document.querySelector('input[type="file"]');
+      console.log("ipfs client: ", client);
+
+      const rootCid = await client.put(fileInput.files, {
+        name: formData.image.name,
+        maxRetries: 3,
+      });
+
+      console.log(formData);
+      return rootCid + "/" + fileInput.files[0].name;
     } catch (e) {
       console.log(e);
     }
   };
+
+  // const progressCallback = (progressData) => {
+  //   let percentageDone =
+  //     100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+  // };
+
+  // const uploadImage = async () => {
+  //   try {
+  //       const output = await lighthouse.upload(
+  //       file,
+  //       process.env.REACT_APP_LIGHTHOUSE_API_KEY,
+  //       false,
+  //       progressCallback
+  //     );
+  //     console.log(output.data.Hash);
+  //     return output.data.Hash;
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   const startDateToUnixTime = () => {
     const dateObject = new Date(formData.coverageStartDate);
@@ -118,7 +118,7 @@ function CreateContract() {
   const handleCreate = async () => {
     try {
       setbtnloading(true);
-      const cid = "QmaskL9v65kwJwVSi3XmAimW17bNS2ZuT4JPNYwbDx8R33";
+      const cid = await uploadImage();
       console.log("cid: ", cid);
 
       console.log("Form Data: ", formData);
