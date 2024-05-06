@@ -157,7 +157,7 @@ function Navbar() {
               <li className="nav-item py-1 px-lg-1">
                 <a
                   className="nav-link px-1 p-0 d-flex align-items-center"
-                  href=""
+                  href="https://climashield.gitbook.io/climashield"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

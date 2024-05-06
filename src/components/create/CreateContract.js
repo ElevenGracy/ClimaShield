@@ -7,12 +7,14 @@ import { Web3Storage } from "web3.storage";
 import "../../styles/create/CreateContract.css";
 import { derivativeInstance } from "../Contract";
 import { FaImage } from "react-icons/fa6";
+import lighthouse from "@lighthouse-web3/sdk";
 
 
 function CreateContract() {
   const [isFormValid, setIsFormValid] = useState(true);
   const [showSyncLoader, setShowSyncLoader] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [file, setFile] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -66,18 +68,38 @@ function CreateContract() {
     token: process.env.REACT_APP_STORAGE_TOKEN,
   });
 
+  // const uploadImage = async () => {
+  //   try {
+  //     const fileInput = document.querySelector('input[type="file"]');
+  //     console.log("ipfs client: ", client);
+
+  //     const rootCid = await client.put(fileInput.files, {
+  //       name: formData.image.name,
+  //       maxRetries: 3,
+  //     });
+
+  //     console.log(formData);
+  //     return rootCid + "/" + fileInput.files[0].name;
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
+  const progressCallback = (progressData) => {
+    let percentageDone =
+      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+  };
+
   const uploadImage = async () => {
     try {
-      const fileInput = document.querySelector('input[type="file"]');
-      console.log("ipfs client: ", client);
-
-      const rootCid = await client.put(fileInput.files, {
-        name: formData.image.name,
-        maxRetries: 3,
-      });
-
-      console.log(formData);
-      return rootCid + "/" + fileInput.files[0].name;
+        const output = await lighthouse.upload(
+        file,
+        process.env.REACT_APP_LIGHTHOUSE_API_KEY,
+        false,
+        progressCallback
+      );
+      console.log(output.data.Hash);
+      return output.data.Hash;
     } catch (e) {
       console.log(e);
     }
@@ -158,6 +180,10 @@ function CreateContract() {
     };
   });
 
+  // const handleFileChange = (e) => {
+  //   setFile(e.target.files);
+  // }
+
   return (
     <>
       <div className="f-title-container">
@@ -166,6 +192,11 @@ function CreateContract() {
       <div className="f-form-main">
         <div className="f-form-container">
           <form onSubmit={handleSubmit}>
+            {/* <div>
+            <p style={{ fontSize: "15px" }}>Choose cover image</p>
+            <input onChange={handleFileChange} type="file" />
+
+            </div> */}
           <div className="f-img-container f-div">
             <label className=" f-label">Upload Image<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
             
@@ -189,7 +220,7 @@ function CreateContract() {
             <div className="f-name-container f-div">
               <div className="f-label-main">
 
-              <label className=" f-label">Name<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
+              <label className=" f-label">Contract Name<span style={{ color: "red" }} className="f-star">&nbsp;*</span></label>
               <a
                       href="#"
                       data-bs-toggle="tooltip"
@@ -204,7 +235,7 @@ function CreateContract() {
                 type="text"
                 className="f-input-name f-input"
                 value={formData.name}
-                placeholder="Enter Your Name"
+                placeholder="Enter Contract Name"
                 required
                 onChange={(e) => {
                   setFormData({
@@ -471,7 +502,7 @@ function CreateContract() {
             </button> */}
             <button type="submit" className="f-btn f-btn-white f-btn-animate" onClick={handleCreate} >
             {showSyncLoader ? (
-                <SyncLoader color="#fff" size={12} speedMultiplier={0.8} />
+                <SyncLoader color="black" size={12} speedMultiplier={0.8} />
               ) : (
                 <>Create</>
               )}

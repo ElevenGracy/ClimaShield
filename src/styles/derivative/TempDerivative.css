@@ -313,7 +313,8 @@
 
 .e-que{
   /* color: white; */
-  font-size: 35px;
+  /* font-size: 35px; */
+  font-size: 40px;
   font-weight: 200;
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
@@ -330,7 +331,7 @@
 .e-ans{
   color: #B7BAC1;
   margin-top: 15px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 100;
 
 }

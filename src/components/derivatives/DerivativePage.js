@@ -366,6 +366,8 @@ function TempDerivative() {
                   <div className="d-details">{parseInt(item.maxBuyers._hex, 16)}</div>
                 </div>
               </div>
+
+              
               <div className="">
                 <button
                   type="button"

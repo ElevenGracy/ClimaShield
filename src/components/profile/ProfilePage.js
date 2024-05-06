@@ -216,30 +216,34 @@ function ProfilePage() {
             
 
             <div
-              className="modal fade"
+              className="modal fade "
               id="exampleModal"
               tabindex="-1"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
+              style={{ backdropFilter: "blur(5px)" }}
             >
-              <div className="modal-dialog modal-dialog-centered">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">
+              <div className="modal-dialog modal-dialog-centered ">
+                <div className="modal-content p-alert" >
+                  <div className="modal-header p-title-al" style={{border:"1px solid #79ffe7"}}>
+                    <h5 className="modal-title p-alert-title" id="exampleModalLabel" >
                       Alert Message
                     </h5>
+                    <div data-bs-theme="dark" className="p-button-alert">
+
                     <button
                       type="button"
-                      className="btn-close"
+                      className="btn-close p-close"
                       data-bs-dismiss="modal"
                       aria-label="Close"
-                    ></button>
+                      ></button>
+                      </div>
                   </div>
                   <div
-                    className="modal-body"
-                    style={{ fontSize: "1.3rem", fontWeight: "600" }}
+                    className="modal-body p-alert-body"
+                    style={{ fontSize: "1.3rem", fontWeight: "300" , border:"1px solid #79ffe7"}}
                   >
-                    Hang Tight! Work is in Progress.📈
+                    Hang Tight! Work is in Progress!📈
                   </div>
                   
                 </div>
@@ -285,10 +289,10 @@ function ProfilePage() {
           ) : allUserContracts.length > 0 ? (
             allUserContracts.map((item, key) => (
               <div
-                className="col-md-5 col-sm-7 col-11 mx-1 mb-5 user-contracts-component"
+                className="temp-derivative-main col-md-5 col-sm-7 col-11 mx-1 mb-5"
                 index={key}
               >
-                <div className="user-contract-img-div">
+                <div className="derivative-img-div">
                   <img
                     src={`https://ipfs.io/ipfs/${item.image}`}
                     // src={temp}
@@ -296,9 +300,9 @@ function ProfilePage() {
                     alt="image not found"
                   ></img>
                 </div>
-                <div className="user-contracts-details">
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
+                <div className="derivative-details">
+                  <div className="py-1">
+                    <div className="derivative-title">
                       Contract Name &nbsp;&nbsp;{" "}
                       <a
                         href="#"
@@ -310,10 +314,10 @@ function ProfilePage() {
                         <i className="fas fa-info-circle head-info"></i>
                       </a>
                     </div>
-                    <div>{item.name}</div>
+                    <div className="d-details">{item.name}</div>
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
+                  <div className="py-1">
+                    <div className="derivative-title">
                       Contract description &nbsp;&nbsp;{" "}
                       <a
                         href="#"
@@ -325,118 +329,125 @@ function ProfilePage() {
                         <i className="fas fa-info-circle head-info"></i>
                       </a>
                     </div>
-                    <div>{item.description}</div>
+                    <div className="d-details">{item.description}</div>
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Location &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="The place where the HDD/CDD of the given contract are based on."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>{item.location}</div>
+
+                  <div className="py-1">
+                  <div className="derivative-title">
+                    Location &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="The place where the HDD/CDD of the given contract are based on."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>{" "}
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Coverage Start Date &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="The day when the contract's execution begins."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>{hexToTimestamp(item.coverageStartDate._hex)}</div>
+                    <div className="d-details">{item.location}</div>
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Coverage End Date &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="The day when the contract is terminated."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>{hexToTimestamp(item.coverageEndDate._hex)}</div>
+                  <div className="py-1">
+                  <div className="derivative-title">
+                    Coverage Start Date &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="The day when the contract's execution begins."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Strike Value &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="It is a threshold value above which it is expected that HDD/CDD will not exceed."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>{parseInt(item.strikeValue._hex, 16)} HDD </div>
+                  <div className="d-details">{hexToTimestamp(item.coverageStartDate._hex)}</div>
+                </div>
+                <div className="py-1">
+                  <div className="derivative-title">
+                    Coverage End Date &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="The day when the contract is terminated."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>{" "}
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Premium Amount &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="The amount you pay at the beginning to buy the contract."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>
-                      {parseInt(item.premiumAmount._hex, 16) / 1000000} USDC
-                    </div>
+                  <div className="d-details">{hexToTimestamp(item.coverageEndDate._hex)}</div>
+                </div>
+
+                  <div className="py-1">
+                  <div className="derivative-title">
+                    Strike Value &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="It is a threshold value above which it is expected that HDD/CDD will not exceed."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Payout Amount &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="The amount you can get after contract reaches its expiration date and the contract is settled."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>
-                      {parseInt(item.payoutAmount._hex, 16) / 1000000} USDC
-                    </div>
+                  <div className="d-details">{parseInt(item.strikeValue._hex, 16)} HDD</div>
+                </div>
+
+                  <div className="py-1">
+                  <div className="derivative-title">
+                    Premium Amount &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="The amount you pay at the beginning to buy the contract."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>
                   </div>
-                  <div className="user-contracts-title">
-                    <div className="user-derivative-head">
-                      Maximum Buyers &nbsp;&nbsp;{" "}
-                      <a
-                        href="#"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="The most people allowed to have this contract, so you know how many others can join in."
-                        className="icon-link"
-                      >
-                        <i className="fas fa-info-circle head-info"></i>
-                      </a>
-                    </div>
-                    <div>{parseInt(item.maxBuyers._hex, 16)}</div>
+                  <div className="d-details">
+                    {parseInt(item.premiumAmount._hex, 16) / 1000000} USDC
                   </div>
                 </div>
+
+                <div className="py-1">
+                  <div className="derivative-title">
+                    Payout Amount &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="The amount you can get after contract reaches its expiration date and the contract is settled."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>
+                  </div>
+                  <div className="d-details">
+                    {parseInt(item.payoutAmount._hex, 16) / 1000000} USDC
+                  </div>
+                </div>
+
+
+                <div className="py-1">
+                  <div className="derivative-title">
+                    Maximum Buyers &nbsp;&nbsp;{" "}
+                    <a
+                      href="#"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="right"
+                      title="The most people allowed to have this contract, so you know how many others can join in."
+                      className="icon-link"
+                    >
+                      <i className="fas fa-info-circle head-info"></i>
+                    </a>
+                  </div>
+                  <div className="d-details">{parseInt(item.maxBuyers._hex, 16)}</div>
+                </div>
+              </div>
+
               </div>
             ))
           ) : (

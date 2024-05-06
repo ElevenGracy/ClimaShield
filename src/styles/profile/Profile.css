@@ -157,3 +157,57 @@
 }
 
 
+.p-alert{
+  background:  #182237;
+  color: white;
+  font-family: "Signika";
+  border-radius: 10px;
+}
+.p-alert-title{
+  /* background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #dafaf4 0.89%,
+    #c6fcf2 17.23%,
+    #b5fcef 42.04%,
+    #a1fbeb 55.12%,
+    #8afee9 71.54%,
+    #63fadf 100%
+
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent; */
+  color:#79ffe7;
+  /* border-radius: 10px !important; */
+}
+
+/* .btn-close:focus {
+  box-shadow: none;
+}
+
+.btn-close svg {
+  fill: #79ffe7;
+} */
+
+.p-button-alert{
+  border: 1px solid #79ffe7;
+  background-color: #79ffe7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.modal-header{
+  border-radius: 10px 10px 0 0;
+  /* border-radius: none; */
+}
+.modal-body{
+  border-radius: 0 0 10px 10px;
+}
+.btn-close{
+  transform: translateX(-6px);
+}
