@@ -326,7 +326,7 @@ function TempDerivative() {
                     </a>
                   </div>
                   <div className="d-details">
-                    {parseInt(item.premiumAmount._hex, 16) / 1000000} USDC
+                    {parseInt(item.premiumAmount._hex, 16) } USDC
                   </div>
                 </div>
 
@@ -344,7 +344,7 @@ function TempDerivative() {
                     </a>
                   </div>
                   <div className="d-details">
-                    {parseInt(item.payoutAmount._hex, 16) / 1000000} USDC
+                    {parseInt(item.payoutAmount._hex, 16) } USDC
                   </div>
                 </div>
                 {/* <div>Contract Type: </div> */}

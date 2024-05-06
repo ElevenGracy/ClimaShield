@@ -265,7 +265,7 @@ function CreateContract() {
               <input
                 type="text"
                 className="f-input-location f-input"
-                placeholder="Enter Your Location"
+                placeholder="Enter Location"
                 value={formData.location}
                 required
                 onChange={(e) => {
